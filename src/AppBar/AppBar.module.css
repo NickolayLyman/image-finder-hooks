@@ -1,0 +1,22 @@
+.header {
+  margin-top: 15px;
+  margin-bottom: 20px;
+}
+.form {
+  display: flex;
+  align-items: center;
+}
+.input {
+  width: 600px;
+  height: 40px;
+  padding: 10px;
+  border: 1px solid rgb(21, 160, 160);
+}
+.button {
+  width: 100px;
+  height: 40px;
+  padding: 5px;
+  background-color: rgb(21, 160, 160);
+  color: white;
+  border: none;
+}

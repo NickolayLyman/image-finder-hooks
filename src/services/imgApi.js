@@ -1,22 +1,22 @@
 import axios from 'axios';
 
-const API_KEY = '19823143-e5d054b038f568b2343c680be';
+const key = '19823143-e5d054b038f568b2343c680be';
 const imgType = 'photo';
 const orientation = 'horizontal';
 
 axios.defaults.baseURL = 'https://pixabay.com/api/';
 
 axios.defaults.params = {
-  API_KEY,
+  key,
   imgType,
   orientation,
   per_page: 12,
 };
 
-async function fetchImg(query, page) {
+async function fetchImg(queryKey, page) {
   try {
     const { data } = await axios({
-      params: { q: query, page },
+      params: { q: queryKey, page },
     });
     return data.hits;
   } catch (error) {
