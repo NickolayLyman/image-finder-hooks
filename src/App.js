@@ -45,7 +45,7 @@ const App = () => {
     const renderimages = () => {
       setStatus(Status.PENDING);
       fetchImg(queryKey, page)
-        .then(images => setImages(images))
+        .then(images => setImages(prevState => [...prevState, ...images]))
         .catch(error => {
           setError(error);
           setStatus(Status.REJECTED);
@@ -65,7 +65,9 @@ const App = () => {
       <ToastContainer position="top-center" autoClose={3000} />
       {status === Status.REJECTED && toast.warn('Error')}
       {images.length > 0 && <Gallery images={images} onClick={handleDelete} />}
-      {status === Status.RESOLVED && <Button onClick={handleLoadMore} />}
+      {status === Status.RESOLVED && (
+        <Button onClick={handleLoadMore} value="Load more" />
+      )}
       {status === Status.PENDING && (
         <Loader type="ThreeDots" color="blue" height={80} width={80} />
       )}

@@ -1,16 +1,16 @@
 import PropTypes from 'prop-types';
 import st from './Button.module.css';
 
-const Button = ({ onClick }) => {
+function Button({ onClick, value }) {
   const handleScroll = () => {
     onClick();
   };
   return (
     <button className={st.btn} type="button" onClick={handleScroll}>
-      Load more
+      {value}
     </button>
   );
-};
+}
 
 Button.propTypes = {
   onClick: PropTypes.func.isRequired,
