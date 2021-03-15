@@ -1,7 +1,6 @@
 import PropTypes from 'prop-types';
 import GalleryItem from '../GalleryItem';
 import st from './Gallery.module.css';
-// import CloseBtn from '../CloseBtn';
 
 const Gallery = ({ images, onClick }) => {
   return (

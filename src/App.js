@@ -4,6 +4,7 @@ import { ToastContainer, toast } from 'react-toastify';
 import Loader from 'react-loader-spinner';
 import fetchImg from './services/imgApi';
 import { animateScroll as scroll } from 'react-scroll';
+import 'react-toastify/dist/ReactToastify.css';
 
 import Gallery from './Gallery';
 import Button from './Button';
@@ -66,7 +67,12 @@ const App = () => {
       {status === Status.REJECTED && toast.warn('Error')}
       {images.length > 0 && <Gallery images={images} onClick={handleDelete} />}
       {status === Status.RESOLVED && (
-        <Button onClick={handleLoadMore} value="Load more" />
+        <Button
+          onClick={handleLoadMore}
+          value="Load more"
+          className="load-more"
+          type="button"
+        />
       )}
       {status === Status.PENDING && (
         <Loader type="ThreeDots" color="blue" height={80} width={80} />

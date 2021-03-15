@@ -2,7 +2,7 @@ import { createPortal } from 'react-dom';
 import { useEffect } from 'react';
 import PropTypes from 'prop-types';
 import st from './Modal.module.css';
-import CloseBtn from '../CloseBtn';
+import Button from '../Button';
 
 const modalRoot = document.querySelector('#modal-root');
 
@@ -29,7 +29,7 @@ const Modal = ({ src, alt, onClose }) => {
   return createPortal(
     <div className={st.Overlay} onClick={handleBackdropClick}>
       <div className={st.modal}>
-        <CloseBtn onClick={onClose} />
+        <Button onClick={onClose} className={st.btn} type="button" value="X" />
         <img src={src} alt={alt} className={st.image} />
       </div>
     </div>,

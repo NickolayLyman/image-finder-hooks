@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { toast } from 'react-toastify';
 import PropTypes from 'prop-types';
 import st from './AppBar.module.css';
+import Button from '../Button';
 
 const AppBar = ({ onSubmit }) => {
   const [queryKey, setQueryKey] = useState('');
@@ -11,7 +12,7 @@ const AppBar = ({ onSubmit }) => {
   };
   const handleSubmit = event => {
     event.preventDefault();
-    if (queryKey.trim() === '') {
+    if (queryKey === '') {
       return toast.warn('Please enter your query');
     }
     onSubmit(queryKey);
@@ -28,9 +29,7 @@ const AppBar = ({ onSubmit }) => {
           value={queryKey}
           onChange={handleChangeRequest}
         />
-        <button type="submit" className={st.button}>
-          Search
-        </button>
+        <Button type="submit" className={st.button} value="Search" />
       </form>
     </header>
   );

@@ -1,19 +1,15 @@
 import PropTypes from 'prop-types';
-import st from './Button.module.css';
 
-function Button({ onClick, value }) {
-  const handleScroll = () => {
-    onClick();
-  };
+function Button({ onClick, value, className, type }) {
   return (
-    <button className={st.btn} type="button" onClick={handleScroll}>
+    <button className={className} type={type} onClick={onClick}>
       {value}
     </button>
   );
 }
 
 Button.propTypes = {
-  onClick: PropTypes.func.isRequired,
+  onClick: PropTypes.func,
 };
 
 export default Button;
