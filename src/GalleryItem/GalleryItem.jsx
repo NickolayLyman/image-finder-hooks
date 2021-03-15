@@ -17,7 +17,11 @@ const GalleryItem = ({ src, alt, largeImageURL, id, onClick }) => {
 
   const handleDeleteImage = () => onClick(id);
   return (
-    <li className={st.item} onMouseEnter={handleHover} onMouseOut={handleHover}>
+    <li
+      className={st.item}
+      onMouseEnter={handleHover}
+      onMouseLeave={handleHover}
+    >
       {hover && (
         <Button
           onClick={handleDeleteImage}
