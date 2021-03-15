@@ -10,7 +10,6 @@ const GalleryItem = ({ src, alt, largeImageURL, id, onClick }) => {
 
   const handleHover = () => {
     setHover(!hover);
-    console.log(hover);
   };
   const toggleModal = () => {
     setShowModal(!showModal);
@@ -18,7 +17,7 @@ const GalleryItem = ({ src, alt, largeImageURL, id, onClick }) => {
 
   const handleDeleteImage = () => onClick(id);
   return (
-    <li className={st.item} onClick={handleHover}>
+    <li className={st.item} onMouseEnter={handleHover} onMouseOut={handleHover}>
       {hover && (
         <Button
           onClick={handleDeleteImage}
@@ -27,12 +26,7 @@ const GalleryItem = ({ src, alt, largeImageURL, id, onClick }) => {
           value="X"
         />
       )}
-      <img
-        className={st.image}
-        src={src}
-        alt={alt}
-        onDoubleClick={toggleModal}
-      />
+      <img className={st.image} src={src} alt={alt} onClick={toggleModal} />
       {showModal && (
         <>
           <Modal onClose={toggleModal} src={largeImageURL} alt={alt} />
