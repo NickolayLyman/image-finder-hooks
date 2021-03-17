@@ -14,5 +14,13 @@
 .btn {
   position: absolute;
   top: 0;
-  right: 0;
+  right: 10px;
+  background-color: transparent;
+  border: transparent;
+  color: green;
+  outline: transparent;
+  &:hover {
+    font-size: 25px;
+    color: red;
+  }
 }

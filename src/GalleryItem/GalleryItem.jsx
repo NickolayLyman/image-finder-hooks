@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import PropTypes from 'prop-types';
 import Modal from '../Modal';
-import st from './GalleryItem.module.css';
+import st from './GalleryItem.module.scss';
 import Button from '../Button';
 
 const GalleryItem = ({ src, alt, largeImageURL, id, onClick }) => {
