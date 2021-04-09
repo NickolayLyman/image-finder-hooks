@@ -71,7 +71,6 @@ const App = () => {
           onClick={handleLoadMore}
           value="Load more"
           className="load-more"
-          type="button"
         />
       )}
       {status === Status.PENDING && (

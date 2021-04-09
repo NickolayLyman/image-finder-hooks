@@ -22,12 +22,13 @@
   position: absolute;
   top: 0;
   right: 0;
-  background-color: transparent;
   border: transparent;
-  color: green;
+  background-color: rgba(10, 175, 175, 0.8);
+  color: white;
   outline: transparent;
+  font-size: 25px;
+  padding: 4px;
   &:hover {
-    font-size: 25px;
     color: red;
   }
 }

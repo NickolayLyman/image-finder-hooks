@@ -14,13 +14,19 @@
 .btn {
   position: absolute;
   top: 0;
-  right: 10px;
-  background-color: transparent;
+  right: 0;
+  width: 20px;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(10, 175, 175, 0.8);
+  color: white;
   border: transparent;
-  color: green;
   outline: transparent;
+  padding: 4px;
+  font-size: 16px;
   &:hover {
-    font-size: 25px;
     color: red;
   }
 }
