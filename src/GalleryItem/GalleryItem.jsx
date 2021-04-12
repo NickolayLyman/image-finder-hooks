@@ -6,30 +6,20 @@ import Button from '../Button';
 
 const GalleryItem = ({ src, alt, largeImageURL, id, onClick }) => {
   const [showModal, setShowModal] = useState(false);
-  const [hover, setHover] = useState(false);
 
-  const handleHover = () => {
-    setHover(!hover);
-  };
   const toggleModal = () => {
     setShowModal(!showModal);
   };
 
   const handleDeleteImage = () => onClick(id);
   return (
-    <li
-      className={st.item}
-      onMouseEnter={handleHover}
-      onMouseLeave={handleHover}
-    >
-      {hover && (
-        <Button
-          onClick={handleDeleteImage}
-          className={st.btn}
-          type="button"
-          value="X"
-        />
-      )}
+    <li className={st.item}>
+      <Button
+        onClick={handleDeleteImage}
+        className={st.btn}
+        type="button"
+        value="X"
+      />
       <img className={st.image} src={src} alt={alt} onClick={toggleModal} />
       {showModal && (
         <>
